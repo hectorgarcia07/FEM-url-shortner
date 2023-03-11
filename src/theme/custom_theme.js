@@ -6,7 +6,7 @@ import shortenDesktopBG from '../../src/images/bg-boost-mobile.svg'
 import shortenMobileBG from '../../src/images/bg-boost-mobile.svg'
 
 import iconBrand from '../../src/images/icon-brand-recognition.svg'
-import iconDetailRecord from '../../src/images/icon-icon-detailed-records.svg'
+import iconDetailRecord from '../../src/images/icon-detailed-records.svg'
 import facebookIcon from '../../src/images/icon-facebook.svg'
 import customizableIcon from '../../src/images/icon-fully-customizable.svg'
 import instagramIcon from '../../src/images/icon-instagram.svg'
