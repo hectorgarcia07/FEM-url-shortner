@@ -22,6 +22,7 @@ import Button from "@mui/material/Button";
 import Logo from './Logo'
 import NavbarContainer from "./NavbarContainer";
 import IconBtn from "./IconBtn";
+import DrawerContainer from './DrawerContainer'
 import { useTheme } from '@mui/material/styles';
 
 const StyledSearch = styled("div")(({ theme }) => ({
@@ -95,25 +96,12 @@ export default function MainNavigation() {
   };
 
   return (
-
     <AppBar position="static">
       <Container maxWidth="lg" disableGutters="true">
         <NavbarContainer>
           <div>
             <Logo src={theme.icons.logo} />
           </div>
-
-          <Box
-            component="div"
-            sx={{
-              display: {
-                xs: "none",
-                sm: "block"
-              }
-            }}
-          >
-            {search}
-          </Box>
 
           <IconBtn
             edge="start"
@@ -133,8 +121,9 @@ export default function MainNavigation() {
 
           {/* The outside of the drawer */}
           <Drawer
+            sx={{ position: 'relative'}}
             //from which side the drawer slides in
-            anchor="right"
+            anchor="top"
             //if open is true --> drawer is shown
             open={open}
             //function that is called when the drawer should close
@@ -143,13 +132,7 @@ export default function MainNavigation() {
             onOpen={toggleDrawer(true)}
           >
             {/* The inside of the drawer */}
-            <Box
-              sx={{
-                p: 2,
-                height: 1,
-                backgroundColor: "#dbc8ff"
-              }}
-            >
+            <DrawerContainer>
               {/* when clicking the icon it calls the function toggleDrawer and closes the drawer by setting the variable open to false */}
               <IconBtn sx={{ m: '5rem', p: '0', }}>
                 <CloseIcon onClick={toggleDrawer(false)} />
@@ -199,7 +182,7 @@ export default function MainNavigation() {
                   Login
                 </Button>
               </Box>
-            </Box>
+            </DrawerContainer>
           </Drawer>
         </NavbarContainer>
       </Container>
