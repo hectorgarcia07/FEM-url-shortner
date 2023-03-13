@@ -97,7 +97,7 @@ export default function MainNavigation() {
 
   return (
     <AppBar position="static">
-      <Container maxWidth="lg" disableGutters="true">
+      <Container maxWidth="lg" disableGutters="true"  sx={{ position: 'relative'}}>
         <NavbarContainer>
           <div>
             <Logo src={theme.icons.logo} />
@@ -121,7 +121,8 @@ export default function MainNavigation() {
 
           {/* The outside of the drawer */}
           <Drawer
-            sx={{ position: 'relative'}}
+           sx={{ position: 'relative', top: '3rem' }}
+           hideBackdrop={false}
             //from which side the drawer slides in
             anchor="top"
             //if open is true --> drawer is shown
@@ -134,11 +135,9 @@ export default function MainNavigation() {
             {/* The inside of the drawer */}
             <DrawerContainer>
               {/* when clicking the icon it calls the function toggleDrawer and closes the drawer by setting the variable open to false */}
-              <IconBtn sx={{ m: '5rem', p: '0', }}>
+              <IconBtn sx={{ p: '1', }}>
                 <CloseIcon onClick={toggleDrawer(false)} />
               </IconBtn>
-
-              <Divider sx={{ mb: 2 }} />
 
               <Box sx={{ mb: 2 }}>
                 <ListItemButton>
