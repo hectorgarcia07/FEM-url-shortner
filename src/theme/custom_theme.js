@@ -18,7 +18,7 @@ import logo from '../../src/images/logo.svg'
 const font =  "'Ubuntu', sans-serif";
 
 export const custom_theme = createTheme({
-    breakpoints: {
+    screenWidth: {
         values: {
             mobile: '375',
             desktop: '1440'
